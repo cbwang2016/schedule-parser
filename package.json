@@ -4,6 +4,7 @@
   "description": "A web app downloading your class schedule from dean.pku.edu.cn and parsing it into an .ics file.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
