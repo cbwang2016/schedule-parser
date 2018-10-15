@@ -3,6 +3,7 @@ exports.handle_login_form = handle_login_form;
 
 var request = require('request');
 var parser = require('./parser');
+const fs = require('fs');
 
 /* header used to get dean.pku.edu.cn page */
 var login_header = {
@@ -118,9 +119,14 @@ function handle_exit(req, res) {
 }
 
 function ics_dispatcher(req, res, schedule) {
-  ics_raw_string = parser.schedule_to_ical(schedule, process.env.SEMESTER_START_DATE || "2016-02-22");
+  ics_raw_string = parser.schedule_to_ical(schedule, process.env.SEMESTER_START_DATE || "2018-09-17");
   res.set('Content-Type', 'text/calendar; charset=utf-8');
   res.set('Content-Disposition', 'attachment; filename=class.ics');
+  fs.writeFile('class.ics', ics_raw_string, (err) => {  
+    if (err) throw err;
+
+    console.log('class.ics saved!');
+  });
   res.send(ics_raw_string);
   res.end();
 }
