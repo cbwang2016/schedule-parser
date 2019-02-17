@@ -119,7 +119,7 @@ function handle_exit(req, res) {
 }
 
 function ics_dispatcher(req, res, schedule) {
-  ics_raw_string = parser.schedule_to_ical(schedule, process.env.SEMESTER_START_DATE || "2018-09-17");
+  ics_raw_string = parser.schedule_to_ical(schedule, process.env.SEMESTER_START_DATE || "2019-02-18");
   res.set('Content-Type', 'application/octet-stream; charset=utf-8');
   res.set('Content-Disposition', 'attachment; filename=class.ics');
 //  fs.writeFile('class.ics', ics_raw_string, (err) => {  
