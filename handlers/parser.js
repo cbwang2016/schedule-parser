@@ -194,7 +194,7 @@ function schedule_to_ical(class_schedule, first_monday) {
      'TZOFFSETFROM:+0800',
      'DTSTART:19910414T000000',
      'TZNAME:GMT+8',
-     'TZOFFSETTO:+0900',
+     'TZOFFSETTO:+0800',
      'RDATE:19910414T000000',
      'END:DAYLIGHT',
      'END:VTIMEZONE\n'].join('\n');
